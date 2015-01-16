@@ -1,48 +1,1 @@
-<?php
-
-class Contact {
-
-    private $id;
-    private $initiator;
-    private $contact;
-    private $message;
-
-    function getId() {
-        return $this->id;
-    }
-
-    function getInitiator() {
-        return $this->initiator;
-    }
-
-    function getContact() {
-        return $this->contact;
-    }
-
-    function getMessage() {
-        return $this->message;
-    }
-
-    function setId($id) {
-        $this->id = $id;
-    }
-
-    function setInitiator($initiator) {
-        $this->initiator = $initiator;
-    }
-
-    function setContact($contact) {
-        $this->contact = $contact;
-    }
-
-    function setMessage($message) {
-        $this->message = $message;
-    }
-
-    public function toDB() {
-        $object = get_object_vars($this);
-        unset($object['message']);
-        return $object;
-    }
-
-}
+<?phpclass Contact {    private $id;    private $initiator;    private $contact;    private $message;    function getId() {        return $this->id;    }    function getInitiator() {        return $this->initiator;    }    function getContact() {        return $this->contact;    }    function getMessage() {        return $this->message;    }    function setId($id) {        $this->id = $id;    }    function setInitiator($initiator) {        $this->initiator = $initiator;    }    function setContact($contact) {        $this->contact = $contact;    }    function setMessage($message) {        $this->message = $message;    }    public function toDB() {        $object = get_object_vars($this);        unset($object['message']);        return $object;    }    function simply() {        $this->contact = $this->contact->simply();        if ($this->message) {            $this->message = $this->message->toDB();        }        $object = get_object_vars($this);        return $object;    }    public function update($id_user1, $id_user2) {        $this->initiator = $id_user1;        $this->contact = $id_user2;        unset($this->message);    }}

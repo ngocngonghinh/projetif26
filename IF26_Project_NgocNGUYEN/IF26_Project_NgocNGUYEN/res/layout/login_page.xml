@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="10dip" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="120sp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/socialnetwork"
+            android:contentDescription="@string/banner" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/loginTitle"
+            android:textColor="@color/colorTitle"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <!-- Email Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emailLogin" />
+
+        <!-- Email TextField -->
+
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="@string/emailHint"
+            android:inputType="textEmailAddress" >
+
+            <requestFocus />
+        </EditText>
+
+        <!-- Password Label -->
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="@string/passwordLogin" />
+
+        <!-- Password TextField -->
+
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword" >
+        </EditText>
+
+        <!-- Error message -->
+
+        <TextView
+            android:id="@+id/login_error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            android:textColor="#e30000"
+            android:textStyle="bold" />
+
+        <!-- Login Button -->
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="login"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="@string/loginBtn"
+            android:textColor="#FFFFFF" />
+
+        <!-- Link to Registration Screen -->
+
+        <Button
+            android:id="@+id/btnLinkToRegisterScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:onClick="register"
+            android:text="@string/registerBtnLogin"
+            android:textColor="@color/colorTitle"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</ScrollView>

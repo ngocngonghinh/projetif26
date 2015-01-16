@@ -1,143 +1,1 @@
-<?php
-class DB
-{
-	private $pdo;
-
-	public function DB($dsn, $username, $password, $options = null)
-	{
-		$this->pdo = new PDO($dsn, $username, $password, $options);
-	}
-
-	public function find($class, $table, $where, $whereArgs = array(), $order = null)
-	{
-            try {
-                $sql = "SELECT * FROM $table WHERE $where";
-
-               
-		if($order != null)
-		{
-			$sql .= " ORDER BY $order";
-		}
-		$sql .= ' LIMIT 1';
-		$pdoStatement = $this->pdo->prepare($sql);
-         
-		$pdoStatement->execute($whereArgs);
-                return $pdoStatement->fetchObject($class);
-                } catch (Exception $e) {
-                    echo 'Exception reçue : ',  $e->getMessage(), "\n";
-            }
-
-	}
-
-	public function search($class, $table, $where, $whereArgs = array())
-	{   try{
-		$sql = "SELECT * FROM $table WHERE $where";
-		$pdoStatement = $this->pdo->prepare($sql);
-		$pdoStatement->execute($whereArgs);
-		return $pdoStatement->fetchAll(PDO::FETCH_CLASS, $class);
-            }
-            catch(Exception $e) {
-                    echo 'Exception SEARCH : ',  $e->getMessage(), "\n";
-                }
-	}
-
-	public function insert($model, $table)
-	{
-		$fields = '';
-		$values = '';
-		$whereArgs = array();
-		foreach($model->toDB() as $name => $value)
-		{
-			if($fields != '')
-			{
-				$fields .= ', ';
-				$values .= ', ';
-			}
-			$fields .= $name;
-			$values .= ":$name";
-			$whereArgs[":$name"] = $value;
-		}    
-            try {
-                $sql = "INSERT INTO $table ($fields) VALUES ($values)";
-		$pdoStatement = $this->pdo->prepare($sql);
-		$result = $pdoStatement->execute($whereArgs);
-            } catch (Exception $e) {
-                echo 'Exception INSERT : ',  $e->getMessage(), "\n";
-            }
-		
-		if(!$result)
-		{
-			return false;
-                }        
-		
-		return $this->pdo->lastInsertId();
-
-	}
-        public function insertSQL($args, $table)
-	{
-		$fields = '';
-		$values = '';
-                $whereArgs = array();
-		foreach($args as $name => $value)
-		{
-			if($fields != '')
-			{
-				$fields .= ', ';
-				$values .= ', ';
-			}
-			$fields .= $name;
-			$values .= ":$name";
-                        $whereArgs[":$name"] = $value;
-		}
-                
-                try {
-		$sql = "INSERT INTO $table ($fields) VALUES ($values)";
-		$pdoStatement = $this->pdo->prepare($sql);
-		$result = $pdoStatement->execute($whereArgs);
-		} catch (Exception $e) {
-                     echo 'Exception INSERT : ',  $e->getMessage(), "\n";
-                }
-                if(!$result)
-		{
-			return false;
-		}
-          
-		return $this->pdo->lastInsertId();
-
-	}
-
-	public function update($model, $table, $where, $whereArgs = array())
-	{
-		$set = '';
-                
-		foreach($model->toDB() as $name => $value)
-		{
-                   
-			if($set != '')
-			{
-				$set .= ', ';
-			}
-			$set .= "$name = :$name";
-			$whereArgs[":$name"] = $value;
-		}
-                try {
-		$sql = "UPDATE $table SET $set WHERE $where";
-		$pdoStatement = $this->pdo->prepare($sql);
-		return $pdoStatement->execute($whereArgs);
-                } catch (Exception $e) {
-                    echo 'Exception UPDATE : ',  $e->getMessage(), "\n";
-                }
-	}
-
-	public function delete($table, $where, $whereArgs = array())
-	{       
-            try{
-		$sql = "DELETE FROM $table WHERE $where";
-		$pdoStatement = $this->pdo->prepare($sql);
-		return $pdoStatement->execute($whereArgs);
-            }
-            catch(Exception $e) {
-                    echo 'Exception DELETE : ',  $e->getMessage(), "\n";
-                }
-	}
-}
+<?phpclass DB {    private $pdo;    public function DB($dsn, $username, $password, $options = null) {        $this->pdo = new PDO($dsn, $username, $password, $options);    }    public function find($class, $table, $where, $whereArgs = array(), $order = null) {        try {            $sql = "SELECT * FROM $table WHERE $where";            if ($order != null) {                $sql .= " ORDER BY $order";            }            $sql .= ' LIMIT 1';            $pdoStatement = $this->pdo->prepare($sql);            $pdoStatement->execute($whereArgs);            return $pdoStatement->fetchObject($class);        } catch (Exception $e) {            echo 'Exception reçue : ', $e->getMessage(), "\n";        }    }    public function search($class, $table, $where, $whereArgs = array()) {        try {            $sql = "SELECT * FROM $table WHERE $where";            $pdoStatement = $this->pdo->prepare($sql);            $pdoStatement->execute($whereArgs);            return $pdoStatement->fetchAll(PDO::FETCH_CLASS, $class);        } catch (Exception $e) {            echo 'Exception SEARCH : ', $e->getMessage(), "\n";        }    }    public function insert($model, $table) {        $fields = '';        $values = '';        $whereArgs = array();        foreach ($model->toDB() as $name => $value) {            if ($fields != '') {                $fields .= ', ';                $values .= ', ';            }            $fields .= $name;            $values .= ":$name";            $whereArgs[":$name"] = $value;        }        try {            $sql = "INSERT INTO $table ($fields) VALUES ($values)";            $pdoStatement = $this->pdo->prepare($sql);            $result = $pdoStatement->execute($whereArgs);        } catch (Exception $e) {            echo 'Exception INSERT : ', $e->getMessage(), "\n";        }        if (!$result) {            return false;        }        return $this->pdo->lastInsertId();    }    public function insertSQL($args, $table) {        $fields = '';        $values = '';        $whereArgs = array();        foreach ($args as $name => $value) {            if ($fields != '') {                $fields .= ', ';                $values .= ', ';            }            $fields .= $name;            $values .= ":$name";            $whereArgs[":$name"] = $value;        }        try {            $sql = "INSERT INTO $table ($fields) VALUES ($values)";            $pdoStatement = $this->pdo->prepare($sql);            $result = $pdoStatement->execute($whereArgs);        } catch (Exception $e) {            echo 'Exception INSERT : ', $e->getMessage(), "\n";        }        if (!$result) {            return false;        }        return $this->pdo->lastInsertId();    }    public function update($model, $table, $where, $whereArgs = array()) {        $set = '';        foreach ($model->toDB() as $name => $value) {            if ($set != '') {                $set .= ', ';            }            $set .= "$name = :$name";            $whereArgs[":$name"] = $value;        }        try {            $sql = "UPDATE $table SET $set WHERE $where";            $pdoStatement = $this->pdo->prepare($sql);            return $pdoStatement->execute($whereArgs);        } catch (Exception $e) {            echo 'Exception UPDATE : ', $e->getMessage(), "\n";        }    }    public function delete($table, $where, $whereArgs = array()) {        try {            $sql = "DELETE FROM $table WHERE $where";            $pdoStatement = $this->pdo->prepare($sql);            return $pdoStatement->execute($whereArgs);        } catch (Exception $e) {            echo 'Exception DELETE : ', $e->getMessage(), "\n";        }    }}

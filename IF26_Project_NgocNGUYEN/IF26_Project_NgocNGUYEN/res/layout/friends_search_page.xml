@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f9fe"
+    android:orientation="vertical" >
+
+    <!-- Editext for Search -->
+
+    <EditText
+        android:id="@+id/inputSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/searchHint"
+        android:inputType="textVisiblePassword" />
+
+    <ListView
+        android:id="@+id/listNearFriends"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </ListView>
+
+</LinearLayout>

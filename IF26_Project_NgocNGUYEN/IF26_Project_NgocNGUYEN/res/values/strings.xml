@@ -1,0 +1,113 @@
+<resources>
+
+    <!-- General -->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Find@Chat</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="mainActivity">MainActivity</string>
+    <string name="errorLogin">Login ou mot de passe incorrect!</string>
+    <string name="errorInternet">Pas de connexion Internet!</string>
+    <string name="errorInput">Inputs invalides!</string>
+    <string name="errorSend">Impossible d\'envoyer ce message</string>
+    <string name="loading">Chargement\.\.\.</string>
+    <string name="title_activity_message">MessageActivity</string>
+    <string name="accept">Accepter</string>
+    <string name="refuse">Refuser</string>
+    <string name="add">Ajouter</string>
+    <string name="requested_friend">Invitation envoyée</string>
+    <string name="already_friend">Déjà ami</string>
+    <string name="friend">Amis</string>
+    <string name="successAddition">est désormais votre ami</string>
+    <string name="failureAddition">Echec d\'ajout d\'ami</string>
+    <string name="successRefusion">n\'est pas votre ami</string>
+    <string name="failureRefusion">Echec d\'exclusion d\'ami</string>
+    <string name="yesno">Êtes-vous sûr?</string>
+    <string name="yes">Oui</string>
+    <string name="no">No</string>
+    <string name="alert">Alerte</string>
+    <string name="info">Information</string>
+    <string name="personalPage">Personal Page</string>
+    <string name="searchTitle">Rechercher</string>
+    <string name="errorLoginMsg">Identitifants incorrects</string>
+
+    <!-- Main page -->
+    <string name="invisibleMsg">Voulez-vous être invisible?</string>
+
+    <!-- Title -->
+    <string name="app_name">Find@Chat</string>
+
+    <!-- Login page -->
+    <string name="loginTitle">Bienvenue au réseau FIND&#64;CHAT</string>
+    <string name="emailLogin">Adresse mail</string>
+    <string name="passwordLogin">Mot de passe</string>
+    <string name="loginBtn">Se connecter</string>
+    <string name="registerBtnLogin">Pas de compte? Créez-en un!</string>
+    <string name="banner">Bandeau de connexion</string>
+
+    <!-- Registration page -->
+    <string name="registerTitle">Créer votre compte</string>
+    <string name="fullName">Nom complet</string>
+    <string name="fullNameHint">Renseignez votre nom complet</string>
+    <string name="email">Votre adresse mail</string>
+    <string name="emailHint">Votre adresse mail</string>
+    <string name="password">Votre mot de passe</string>
+    <string name="passwordHint">Votre mot de passe</string>
+    <string name="registerBtn">Créer un compte</string>
+    <string name="alreadyRegistered">Ayant déjà un compte. Veuillez vous connecter!</string>
+    <string name="errorRegisteration">Error occurred in registration</string>
+    <string name="notStrongPassword">Mot de passe doit contenir au moins 6 caractères alphanumériques, lettres en majuscule et un en minuscule, un chiffre et un symbole spécial</string>
+
+    <!-- Main page -->
+    <string name="tabsPageTitle">Activitiés principales</string>
+    <string name="personalPageTitle">Activités personelles</string>
+    <string name="invisibilityTitle">Devenir invisible</string>
+    <string name="logoutTitle">Déconnexion</string>
+    <string name="tabsPageSub">Public</string>
+    <string name="personalPageSub">Personnelle</string>
+    <string name="invisibilitySub">Personne ne vous voit</string>
+    <string name="logoutSub">Quitter</string>
+
+    <!-- Tab page -->
+    <string name="feedsTab">Actu</string>
+    <string name="invitationsTab">Amis</string>
+    <string name="contactsTab">Messages</string>
+    <string name="mapTab">Map</string>
+
+    <!-- Map page -->
+    <string name="friendsListBtn">Liste d\'amis</string>
+    <string name="alreadyFriendsListBtn">Liste des amis</string>
+    <string name="gpsSettings">Paramètres de GPS</string>
+    <string name="gpsNotEnabled">GPS n\'est pas activé. Voulez-vous revenir au menu?</string>
+    <string name="mapNotEnabled">Map n\'est pas activé</string>
+    <string name="mapWelcome">Bienvenue à La Carte</string>
+
+    <!-- Search friend page -->
+    <string name="searchHint">Chercher\.\.\.</string>
+
+    <!-- Personal page -->
+    <string name="visibleBtnOn">Oui</string>
+    <string name="visibleBtnOff">Non</string>
+    <string name="distance">Distance de préférence</string>
+    <string name="saveIds">Sauvegarder mes identifiants</string>
+    <string name="mapTypes">Choisir le type de la carte</string>
+
+    <string-array name="distance_array">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="mapTypes">
+        <item>Normal</item>
+        <item>Satellite</item>
+        <item>Terrain</item>
+        <item>Hybrid</item>
+    </string-array>
+
+</resources>
