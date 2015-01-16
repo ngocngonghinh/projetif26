@@ -35,7 +35,7 @@ public class UserFunctions {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair(Keys.EMAIL, email));
 		params.add(new BasicNameValuePair(Keys.PASSWORD, password));
-		String jsonStr = jsonParser.makeHttpRequest(Keys.LOGIN_URL, Keys.GET, params);
+		String jsonStr = jsonParser.makeHttpRequest(Keys.LOGIN_URL, Keys.POST_METHOD, params);
 		JSONObject jsonObj = jsonParser.convertStringtoJSON(jsonStr);
 		return jsonObj;
 	}
@@ -63,7 +63,7 @@ public class UserFunctions {
 			params.add(new BasicNameValuePair(Keys.EMAIL, email));
 			params.add(new BasicNameValuePair(Keys.PASSWORD, password));
 
-			String jsonStr = jsonParser.makeHttpRequest(Keys.REGISTRATION_URL, Keys.GET, params);
+			String jsonStr = jsonParser.makeHttpRequest(Keys.REGISTRATION_URL, Keys.POST_METHOD, params);
 			jsonObj = jsonParser.convertStringtoJSON(jsonStr);
 		}
 

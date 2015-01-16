@@ -10,10 +10,10 @@ public class Keys {
 	public static final String SAVING_MAP_STATE = "savingMapState";
 
 	/**
-	 * Type of request methode
+	 * Type of request method
 	 */
-	public static final String GET = "GET";
-	public static final String POST = "POST";
+	public static final String POST_METHOD = "POST";
+	public static final String GET_METHOD = "GET";
 
 	/**
 	 * Common parameters
@@ -62,11 +62,14 @@ public class Keys {
 	public static final String LOGIN_URL = ROOT + "login.php";
 	public static final String REGISTRATION_URL = ROOT + "createAccount.php";
 	public static final String INVITATIONS_URL = ROOT + "getInvitations.php";
-	public static final String ACCEPT_INVITATION_URL = ROOT + "acceptFriend.php";
-	public static final String REFUSE_INVITATION_URL = ROOT + "refuseFriend.php";
+	public static final String ACCEPT_INVITATION_URL = ROOT
+			+ "acceptFriend.php";
+	public static final String REFUSE_INVITATION_URL = ROOT
+			+ "refuseFriend.php";
 	public static final String SEND_REQUEST_URL = ROOT + "listSentRequests.php";
 	public static final String ALREADY_FRIENDS_URL = ROOT + "getFriends.php";
-	public static final String UPDATE_LOCATION_URL = ROOT + "updateLocation.php";
+	public static final String UPDATE_LOCATION_URL = ROOT
+			+ "updateLocation.php";
 	public static final String GET_LOCATION_URL = ROOT + "getLocations.php";
 	public static final String SEND_REQUEST = ROOT + "requestFriend.php";
 	public static final String GET_CONTACTS_URL = ROOT + "contacts.php";

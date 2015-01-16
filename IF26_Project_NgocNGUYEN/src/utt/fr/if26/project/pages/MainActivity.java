@@ -192,7 +192,7 @@ public class MainActivity extends SherlockFragmentActivity {
 			params.add(new BasicNameValuePair(Keys.LATITUDE, Keys.DEFAULT_LATITUDE));
 
 			// getting JSON Object
-			String jsonObj = new JSONParser().makeHttpRequest(Keys.UPDATE_LOCATION_URL, Keys.GET, params);
+			String jsonObj = new JSONParser().makeHttpRequest(Keys.UPDATE_LOCATION_URL, Keys.POST_METHOD, params);
 			return jsonObj;
 		}
 	}

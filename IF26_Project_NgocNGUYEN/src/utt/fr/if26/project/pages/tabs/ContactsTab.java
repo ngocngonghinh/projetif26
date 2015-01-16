@@ -72,7 +72,7 @@ public class ContactsTab extends SherlockFragment {
 		protected String doInBackground(String... args) {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
-			String result = new JSONParser().makeHttpRequest(this.url, Keys.GET, params);
+			String result = new JSONParser().makeHttpRequest(this.url, Keys.POST_METHOD, params);
 			return result;
 		}
 
@@ -126,7 +126,7 @@ public class ContactsTab extends SherlockFragment {
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
 			params.add(new BasicNameValuePair(Keys.CONTACT, Integer.toString(this.contact.getId())));
 			JSONParser jsonParser = new JSONParser();
-			String jsonObj = jsonParser.makeHttpRequest(this.url, Keys.GET, params);
+			String jsonObj = jsonParser.makeHttpRequest(this.url, Keys.POST_METHOD, params);
 
 			return jsonObj;
 		}

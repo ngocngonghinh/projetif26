@@ -358,7 +358,7 @@ public class MapTab extends SherlockFragment {
 			params.add(new BasicNameValuePair(Keys.LATITUDE, Double.toString(latitude)));
 
 			// getting JSON Object
-			String jsonObj = jsonParser.makeHttpRequest(Keys.UPDATE_LOCATION_URL, Keys.GET, params);
+			String jsonObj = jsonParser.makeHttpRequest(Keys.UPDATE_LOCATION_URL, Keys.POST_METHOD, params);
 			return jsonObj;
 		}
 	}
@@ -372,7 +372,7 @@ public class MapTab extends SherlockFragment {
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
 
 			// getting JSON Object
-			String jsonObj = jsonParser.makeHttpRequest(Keys.GET_LOCATION_URL, Keys.GET, params);
+			String jsonObj = jsonParser.makeHttpRequest(Keys.GET_LOCATION_URL, Keys.POST_METHOD, params);
 			return jsonObj;
 		}
 

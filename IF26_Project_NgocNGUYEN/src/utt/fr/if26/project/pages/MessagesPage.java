@@ -85,7 +85,7 @@ public class MessagesPage extends SherlockFragmentActivity {
 			params.add(new BasicNameValuePair(Keys.CONTACT, Integer.toString(contact.getId())));
 			params.add(new BasicNameValuePair(Keys.MESSAGE, message));
 			JSONParser jsonParser = new JSONParser();
-			String json = jsonParser.makeHttpRequest(Keys.GET_MESSAGE_URL, Keys.GET, params);
+			String json = jsonParser.makeHttpRequest(Keys.GET_MESSAGE_URL, Keys.POST_METHOD, params);
 
 			return json;
 		}

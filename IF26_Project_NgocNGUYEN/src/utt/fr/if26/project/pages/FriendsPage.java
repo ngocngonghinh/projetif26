@@ -61,7 +61,7 @@ public class FriendsPage extends SherlockFragmentActivity {
 		protected String doInBackground(String... args) {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
-			String result = new JSONParser().makeHttpRequest(this.url, Keys.GET, params);
+			String result = new JSONParser().makeHttpRequest(this.url, Keys.POST_METHOD, params);
 			return result;
 		}
 
@@ -104,7 +104,7 @@ public class FriendsPage extends SherlockFragmentActivity {
 		protected String doInBackground(String... args) {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
-			String result = new JSONParser().makeHttpRequest(this.url, Keys.GET, params);
+			String result = new JSONParser().makeHttpRequest(this.url, Keys.POST_METHOD, params);
 			return result;
 		}
 
@@ -147,7 +147,7 @@ public class FriendsPage extends SherlockFragmentActivity {
 		protected String doInBackground(String... args) {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
-			String result = new JSONParser().makeHttpRequest(this.url, Keys.GET, params);
+			String result = new JSONParser().makeHttpRequest(this.url, Keys.POST_METHOD, params);
 			return result;
 		}
 

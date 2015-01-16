@@ -338,7 +338,7 @@ public class FriendsListAdapter extends BaseAdapter {
 			// String result = new JSONParser().makeHttpRequest(this.url, "GET",
 			// params);
 			String result = new JSONParser().makeHttpRequest(this.url,
-					Keys.GET, params);
+					Keys.POST_METHOD, params);
 			return result;
 		}
 
@@ -398,7 +398,7 @@ public class FriendsListAdapter extends BaseAdapter {
 			// String result = new JSONParser().makeHttpRequest(this.url, "GET",
 			// params);
 			String result = new JSONParser().makeHttpRequest(this.url,
-					Keys.GET, params);
+					Keys.POST_METHOD, params);
 			return result;
 		}
 
@@ -459,7 +459,7 @@ public class FriendsListAdapter extends BaseAdapter {
 			// String result = new JSONParser().makeHttpRequest(this.url, "GET",
 			// params);
 			String result = new JSONParser().makeHttpRequest(this.url,
-					Keys.GET, params);
+					Keys.POST_METHOD, params);
 			return result;
 		}
 

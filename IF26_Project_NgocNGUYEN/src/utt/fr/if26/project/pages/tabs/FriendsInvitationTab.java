@@ -70,7 +70,7 @@ public class FriendsInvitationTab extends SherlockFragment {
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair(Keys.TOKEN, LoginPage.getToken()));
 			// getting JSONObject result
-			String result = new JSONParser().makeHttpRequest(this.url, Keys.GET, params);
+			String result = new JSONParser().makeHttpRequest(this.url, Keys.POST_METHOD, params);
 			return result;
 		}
 
